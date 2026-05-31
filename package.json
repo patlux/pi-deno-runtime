@@ -1,0 +1,32 @@
+{
+  "name": "pi-deno-runtime",
+  "version": "0.1.0",
+  "description": "Experimental Deno runtime launcher for @earendil-works/pi-coding-agent",
+  "type": "module",
+  "bin": {
+    "pi-deno": "bin/pi-deno.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "files",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "deno check src/pi-deno.ts",
+    "fmt": "deno fmt",
+    "smoke": "scripts/smoke.sh"
+  },
+  "keywords": [
+    "pi",
+    "deno",
+    "coding-agent",
+    "runtime"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patlux/pi-deno-runtime.git"
+  }
+}

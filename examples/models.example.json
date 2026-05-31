@@ -1,0 +1,17 @@
+{
+  "providers": {
+    "local-openai-compatible": {
+      "type": "openai-completions",
+      "baseURL": "http://localhost:8080/v1",
+      "apiKey": "dummy",
+      "models": {
+        "example-model": {
+          "contextWindow": 128000,
+          "maxOutputTokens": 8192,
+          "supportsThinking": false,
+          "supportsImages": false
+        }
+      }
+    }
+  }
+}

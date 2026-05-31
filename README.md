@@ -6,7 +6,24 @@ This is an experimental Deno runtime launcher for `@earendil-works/pi-coding-age
 from npm, applies a small Deno compatibility patch, caches the patched package locally, and runs the
 Pi CLI with Deno.
 
-## Install
+## Why
+
+I tried Pi on Node, Bun, Bun canary, and Deno because I wanted lower battery drain from long-running
+CLI sessions.
+
+In local benchmarks, Deno was not the fastest for tiny startup commands, but it had the best balance
+for actual Pi usage:
+
+- lower RAM than Bun on every tested workload
+- much lower system CPU time than Bun
+- faster than Node on the heavier `--list-models` path
+- lowest RSS in the tested TUI idle runs
+
+Bun canary won startup. Deno won the real workload.
+
+See [`docs/benchmarks.md`](docs/benchmarks.md) for the numbers.
+
+## Install from GitHub
 
 Requires Deno 2.6+.
 
@@ -23,17 +40,6 @@ pi-deno --help
 ```
 
 The first run downloads and patches `@earendil-works/pi-coding-agent`.
-
-## npm install
-
-If you prefer npm as the installer:
-
-```bash
-npm install -g pi-deno-runtime
-pi-deno --version
-```
-
-The npm package still requires `deno` to be installed and available on `PATH`.
 
 ## Pi version
 
